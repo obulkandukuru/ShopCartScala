@@ -4,6 +4,6 @@ object Main {
  
   def main( args: Array[String]) {
    
-    println("[ " + args.mkString(", ") + " ] => �" + ShopCart.checkout(args))
+    println("[ " + args.mkString(", ") + " ] => �" + ShopCart.checkoutWithOffers(args))
   }
 }

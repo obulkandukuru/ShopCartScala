@@ -24,6 +24,13 @@ Retrieve price of item from priceList
 
   def price(item: String): Option[Double] = priceList.get(item toLowerCase)
 
+  def checkoutWithOffers(items: Array[String]): Double = {
+    val noOfApples: Int = items.count(p => p.equalsIgnoreCase("apple"))
+    val noOfOranges: Int = items.count(p => p.equalsIgnoreCase("orange"))
+
+    val total = CalculatePrice.calculatePrice("apple")(noOfApples)  + CalculatePrice.calculatePrice("orange")(noOfOranges)
+    BigDecimal(total).toDouble
+  }
 
 
 }
