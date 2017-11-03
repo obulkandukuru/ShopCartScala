@@ -17,7 +17,7 @@ object CalculatePrice {
   def calculatePrice(item: String): Int => Double = {
     val price: Double = ShopCart.getPrice(item)
     item toLowerCase() match {
-      case "apple" => (numberOfItems:Int) => noOfferPrice(numberOfItems, price)
+      case "apple" => (numberOfItems:Int) => offerPriceApple(numberOfItems, price)
 
       case "orange" => (numberOfItems:Int) => offerPriceOrange(numberOfItems, price)
       case _ => (numberOfItems:Int) => numberOfItems * price
